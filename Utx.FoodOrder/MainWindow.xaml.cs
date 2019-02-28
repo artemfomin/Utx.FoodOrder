@@ -21,6 +21,8 @@ namespace Utx.FoodOrder
     {
         private string _employeeName = string.Empty;
         private FoodProviders _selectedProvider;
+        private double _fromPrice = -1;
+        private double _toPrice = -1;
 
         // All 4 should be better injected, I prefer Autofac. Out of time for it
         private McDonaldsProvider.Provider McDonalds { get; set; }
@@ -131,7 +133,7 @@ namespace Utx.FoodOrder
                     _selectedProvider = FoodProviders.BurgerKing;
                     break;
             }
-            foodMenuTable.ShowVendor(_selectedProvider, OrderedItems);
+            ShowVendor();
         }
 
         private void menuItem_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -140,10 +142,49 @@ namespace Utx.FoodOrder
             if (selectedItem != null && !OrderedItems.Any(x => x.Equals(selectedItem)))
             {
                 OrderedItems.Add(selectedItem);
-                foodMenuTable.ShowVendor(_selectedProvider, OrderedItems);
+                ShowVendor();
                 total.Content = OrderedItems.Select(x => x.Price).Sum();
                 DataContext = this;
             }            
+        }
+
+        private void from_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (from.Text.All(x => Char.IsDigit(x)))
+            {
+                _fromPrice = Double.Parse(from.Text);
+            }
+            else if (from.Text == string.Empty)
+            {
+                _fromPrice = -1;
+            }
+            else
+            {
+                from.Text = string.Empty;
+            }
+            ShowVendor();
+        }
+
+        private void to_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (to.Text != string.Empty && to.Text.All(x => Char.IsDigit(x)))
+            {
+                _toPrice = Double.Parse(to.Text);
+            }
+            else if (to.Text == string.Empty)
+            {
+                _toPrice = -1;
+            }
+            else
+            {
+                to.Text = string.Empty;
+            }
+            ShowVendor();
+        }
+
+        private void ShowVendor()
+        {
+            foodMenuTable.ShowVendor(_selectedProvider, OrderedItems, _fromPrice, _toPrice);
         }
     }
 }

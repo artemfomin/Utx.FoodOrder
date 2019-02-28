@@ -22,13 +22,13 @@
                  Margin="58,7,0,0" 
                  HorizontalAlignment="Left"
                  TextChanged="employeeName_TextChanged"
-                 Width="184"/>
-        <Label Name="providerLabel" Margin="273,4,0,0" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="73" IsEnabled="False">Provider</Label>
+                 Width="142"/>
+        <Label Name="providerLabel" Margin="215,4,0,0" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59" IsEnabled="False">Provider</Label>
 
 
         <ComboBox Name="providerSelect" 
                   VerticalAlignment="Top" 
-                  Margin="332,7,0,0" 
+                  Margin="274,7,0,0" 
                   HorizontalAlignment="Left"
                   Width="152" 
                   SelectionChanged="providerSelect_SelectionChanged"
@@ -68,5 +68,29 @@
             Margin="0 0 10 10">
             Order
         </Button>
+        <TextBox x:Name="from" 
+            AcceptsReturn="False" 
+            VerticalAlignment="Top" 
+            Margin="480,7,0,0" 
+            HorizontalAlignment="Left"
+            TextChanged="from_TextChanged"
+            Width="35"/>
+        <TextBox x:Name="to" 
+            AcceptsReturn="False" 
+            VerticalAlignment="Top" 
+            Margin="547,7,0,0" 
+            HorizontalAlignment="Left"
+            TextChanged="to_TextChanged"
+            Width="35"/>
+        <Label x:Name="nameLabel_Copy"
+            Margin="520,5,0,0" 
+            HorizontalAlignment="Left" 
+            Width="44" Height="24" 
+            VerticalAlignment="Top" Content="To"/>
+        <Label x:Name="nameLabel_Copy1"
+            Margin="436,4,0,0" 
+            HorizontalAlignment="Left" 
+            Width="44" Height="24" 
+            VerticalAlignment="Top" Content="From"/>
     </Grid>
 </Window>

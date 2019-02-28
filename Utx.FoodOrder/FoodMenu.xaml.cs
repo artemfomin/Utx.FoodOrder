@@ -39,13 +39,21 @@ namespace Utx.FoodOrder
             MenuItems.Add(item);
         }
 
-        public void ShowVendor(FoodProviders provider, IEnumerable<FoodModel> except = null)
+        public void ShowVendor(FoodProviders provider, IEnumerable<FoodModel> except = null, double fromPrice = -1, double toPrice = -1)
         {
             DisplayItems.Clear();
             var resultList = MenuItems.Where(x => x.Provider.Equals(provider));
             if (except != null)
             {
                 resultList = resultList.Except(except);
+            }
+            if (fromPrice > -1)
+            {
+                resultList = resultList.Where(x => x.Price >= fromPrice);
+            }
+            if (toPrice > -1)
+            {
+                resultList = resultList.Where(x => x.Price <= toPrice);
             }
             foreach (var item in resultList)
             {
