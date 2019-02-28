@@ -5,6 +5,16 @@ VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utx.FoodOrder", "Utx.FoodOrder\Utx.FoodOrder.csproj", "{DB25702A-2E7F-4485-9805-81AE86F360B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utx.FoodOrder.Clients.PizzaHut", "Utx.FoodOrder.Clients.PizzaHut\Utx.FoodOrder.Clients.PizzaHut.csproj", "{DA484CE1-39C4-4206-A2D0-9C400768D79E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utx.FoodOrder.Clients.McDonalds", "Utx.FoodOrder.Clients.McDonalds\Utx.FoodOrder.Clients.McDonalds.csproj", "{BA9595F7-2C48-46E8-BACB-A1EBE53E70A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utx.FoodOrder.Clients.BurgerKing", "Utx.FoodOrder.Clients.BurgerKing\Utx.FoodOrder.Clients.BurgerKing.csproj", "{1CE075DF-5DBC-4E4C-9C11-E45D6740191A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utx.FoodOrder.Clients.Kfc", "Utx.FoodOrder.Clients.Kfc\Utx.FoodOrder.Clients.Kfc.csproj", "{9E47FBCA-7D85-4FDC-9B82-632C69D834D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utx.FoodOrder.Clients.Base", "Utx.FoodOrder.Clients.BaseClient\Utx.FoodOrder.Clients.Base.csproj", "{5B9C2F52-7B66-4873-AB25-5B57308A8C85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +25,26 @@ Global
 		{DB25702A-2E7F-4485-9805-81AE86F360B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB25702A-2E7F-4485-9805-81AE86F360B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB25702A-2E7F-4485-9805-81AE86F360B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA484CE1-39C4-4206-A2D0-9C400768D79E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA484CE1-39C4-4206-A2D0-9C400768D79E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA484CE1-39C4-4206-A2D0-9C400768D79E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA484CE1-39C4-4206-A2D0-9C400768D79E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA9595F7-2C48-46E8-BACB-A1EBE53E70A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA9595F7-2C48-46E8-BACB-A1EBE53E70A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA9595F7-2C48-46E8-BACB-A1EBE53E70A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA9595F7-2C48-46E8-BACB-A1EBE53E70A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CE075DF-5DBC-4E4C-9C11-E45D6740191A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CE075DF-5DBC-4E4C-9C11-E45D6740191A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CE075DF-5DBC-4E4C-9C11-E45D6740191A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CE075DF-5DBC-4E4C-9C11-E45D6740191A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E47FBCA-7D85-4FDC-9B82-632C69D834D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E47FBCA-7D85-4FDC-9B82-632C69D834D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E47FBCA-7D85-4FDC-9B82-632C69D834D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E47FBCA-7D85-4FDC-9B82-632C69D834D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B9C2F52-7B66-4873-AB25-5B57308A8C85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B9C2F52-7B66-4873-AB25-5B57308A8C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B9C2F52-7B66-4873-AB25-5B57308A8C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B9C2F52-7B66-4873-AB25-5B57308A8C85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

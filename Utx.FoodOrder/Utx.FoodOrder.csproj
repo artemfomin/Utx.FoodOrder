@@ -54,6 +54,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="FoodMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -62,12 +66,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Enums\FoodProviders.cs" />
+    <Compile Include="FoodMenu.xaml.cs">
+      <DependentUpon>FoodMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\FoodModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -92,6 +101,31 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utx.FoodOrder.Clients.BaseClient\Utx.FoodOrder.Clients.Base.csproj">
+      <Project>{5b9c2f52-7b66-4873-ab25-5b57308a8c85}</Project>
+      <Name>Utx.FoodOrder.Clients.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utx.FoodOrder.Clients.BurgerKing\Utx.FoodOrder.Clients.BurgerKing.csproj">
+      <Project>{1ce075df-5dbc-4e4c-9c11-e45d6740191a}</Project>
+      <Name>Utx.FoodOrder.Clients.BurgerKing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utx.FoodOrder.Clients.Kfc\Utx.FoodOrder.Clients.Kfc.csproj">
+      <Project>{9e47fbca-7d85-4fdc-9b82-632c69d834d1}</Project>
+      <Name>Utx.FoodOrder.Clients.Kfc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utx.FoodOrder.Clients.McDonalds\Utx.FoodOrder.Clients.McDonalds.csproj">
+      <Project>{ba9595f7-2c48-46e8-bacb-a1ebe53e70a5}</Project>
+      <Name>Utx.FoodOrder.Clients.McDonalds</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utx.FoodOrder.Clients.PizzaHut\Utx.FoodOrder.Clients.PizzaHut.csproj">
+      <Project>{da484ce1-39c4-4206-a2d0-9c400768d79e}</Project>
+      <Name>Utx.FoodOrder.Clients.PizzaHut</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

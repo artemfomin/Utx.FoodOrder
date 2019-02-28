@@ -3,10 +3,70 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Utx.FoodOrder"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+        xmlns:local="clr-namespace:Utx.FoodOrder.Models"
+        xmlns:foodorder="clr-namespace:Utx.FoodOrder"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="450" Width="600">
     <Grid>
-        
+        <Label Name="nameLabel"
+               Margin="10,4,-10,-4" 
+               HorizontalAlignment="Left" 
+               Width="592" Height="269" 
+               VerticalAlignment="Top">
+            Name
+        </Label>
+        <TextBox Name="employeeName" 
+                 AcceptsReturn="False" 
+                 VerticalAlignment="Top" 
+                 Margin="58,7,0,0" 
+                 HorizontalAlignment="Left"
+                 TextChanged="employeeName_TextChanged"
+                 Width="184"/>
+        <Label Name="providerLabel" Margin="273,4,0,0" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="73" IsEnabled="False">Provider</Label>
+
+
+        <ComboBox Name="providerSelect" 
+                  VerticalAlignment="Top" 
+                  Margin="332,7,0,0" 
+                  HorizontalAlignment="Left"
+                  Width="152" 
+                  SelectionChanged="providerSelect_SelectionChanged"
+                  IsEnabled="False">
+            <ComboBoxItem>McDonalds</ComboBoxItem>
+            <ComboBoxItem>KFC</ComboBoxItem>
+            <ComboBoxItem>Pizza Hut</ComboBoxItem>
+            <ComboBoxItem>Burger King</ComboBoxItem>
+        </ComboBox>
+
+        <foodorder:FoodMenu 
+            ScrollViewer.CanContentScroll="True"
+            x:Name="foodMenuTable" 
+            Margin="10,34,10,0" Height="200" 
+            VerticalAlignment="Top"/>
+
+        <Label Margin="10,234,486,212">Ordered items:</Label>
+        <ListView x:Name="existingOrder"
+                  ItemsSource="{Binding OrderedItems}" 
+                  ScrollViewer.VerticalScrollBarVisibility="Visible"
+                  ScrollViewer.CanContentScroll="True"
+                  VerticalContentAlignment="Top" Margin="10,257,10,39">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}">Блюдо</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Provider}" Width="100">Компания</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}">Цена</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label VerticalAlignment="Bottom" Margin="10 0 0 10">TOTAL:</Label>
+        <Label Name="total" VerticalAlignment="Bottom" Margin="60 0 0 10">0</Label>
+        <Button 
+            VerticalAlignment="Bottom" 
+            HorizontalAlignment="Right" 
+            Width="100"
+            Margin="0 0 10 10">
+            Order
+        </Button>
     </Grid>
 </Window>
